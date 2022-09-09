@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+
+<meta charset="UTF-8" />
+
+<head>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+</head>
+
+<html>
+<link href="layout-styles.css" rel="stylesheet" type="text/css" />
+<title>Hash Frontier, The Full Stack Field Guide to Bitcoin</title>
+<image id="hf_logo" class="hf_logo_finish" src="HF_HighRes.png"></image>
+
+<div>
+    <a href="http://www.twitter.com/HashFrontier">
+        <image class="twitter" src="data:image/png;base64,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CiAgIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6ZWRmN2Y2MzEtOTM5MS00MjZlLTk3MzktMDg2YWFkOTg0MDYyIgogICB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6NTY4MDg0MzEtODU0MS00NWQxLThmNGUtZTU5MDk0NTIwNDU4IgogICBkYzpGb3JtYXQ9ImltYWdlL3BuZyIKICAgR0lNUDpBUEk9IjIuMCIKICAgR0lNUDpQbGF0Zm9ybT0iTGludXgiCiAgIEdJTVA6VGltZVN0YW1wPSIxNjYyNTY3MTk1OTkyNDQwIgogICBHSU1QOlZlcnNpb249IjIuMTAuMzAiCiAgIHRpZmY6T3JpZW50YXRpb249IjEiCiAgIHhtcDpDcmVhdG9yVG9vbD0iR0lNUCAyLjEwIj4KICAgPHhtcE1NOkhpc3Rvcnk+CiAgICA8cmRmOlNlcT4KICAgICA8cmRmOmxpCiAgICAgIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiCiAgICAgIHN0RXZ0OmNoYW5nZWQ9Ii8iCiAgICAgIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6ZjEzNjBkNTgtMmNkYy00NGIyLTkwZTMtNjc4YzI5ODdiYzJiIgogICAgICBzdEV2dDpzb2Z0d2FyZUFnZW50PSJHaW1wIDIuMTAgKExpbnV4KSIKICAgICAgc3RFdnQ6d2hlbj0iMjAyMi0wOS0wN1QxMDoxMzoxNS0wNjowMCIvPgogICAgPC9yZGY6U2VxPgogICA8L3htcE1NOkhpc3Rvcnk+CiAgPC9yZGY6RGVzY3JpcHRpb24+CiA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgCjw/eHBhY2tldCBlbmQ9InciPz4rgHOdAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH5gkHEA0PpTnIWwAABBhJREFUWMPtWE1IAk0YnvUHEkSIIgoi+rEOQlRQh4ik7GhEEEVR4ckOdQk6BUYQREkdokN1CQKRiKBCI+2oCBZYGEZEFNGhkih1Lded3Vn9DiOLrGbap32X7z3t48y8jzPzzPu+MwRCiOM4giAIguA4TiKR/A0kIIQEQQAAAAAEQcRisb+BBMMw4L8wEf8vAADxePzPoITjOLFYHI/H4/G4WCxGCP0ahkIhkiQhhHK5vLy8PLNnkUQiicViAACRSIQQ+h28vr6enZ0tLS2tq6tTqVRVVVUajebw8DAUCiV35jjO5/MBABBCAELIMMz7+7vb7WZZFkNs2cCvry+j0fjdRnZ0dFxdXTEM8/b2ZrPZdDqdyWTCYwH2YrVaKysrcafsjaIog8GQWUQlJSUjIyP4u6+vLxgM4rGAZVmGYWZmZgAASqXy4uKC9wshxK3fwaOjo+xl3N3d/fj4CCG8vb2lKArQNM2yrEqlws0ymcxut2O/CCHcmhaSJMmP+tFqa2vNZvPW1pZWq3U4HAghgBBiGKasrCy5n9FoDAQCNE0jhPC+siwrgE6n8xfHd29vD7tKiEun0wl6qNVqp9NJUdR34trZ2cmV9eDggHeVCCCdnZ2CTk6nU61W6/V6t9sNIUwNAi8vLzmxOhyO3t5ePoAkxHV3d5dhTGtr6+bm5uXlJa9JhmE2NjZyIn56ekoWZiJyVVdXr62tTU9Ppx3j8Xg8Hg/+Hh0dbW5urqiouL+/z4kYLxgfuQDWKkVRJEnq9frCZYXX19dknYo4jgMADA8Pn56ejo+PDw4OFiQXiUQKhQJLBM9YgjOzTCYbGhoq3HTHxsakUmnysidUzeutQNbW1iZIiyJcjnR1dRUVFRWOuKWlBRPxSw34YLS7u1sgVoIg/H6/IAgCPhhFo9GVlZVCEBsMhtSUCpLTHE3TFoulvr4+v8RnZ2epKRUkZ7pIJBIOh/1+//b2dmNjY15Y+/v7KYpKTakgOdNFIpH29vb8TtflcqXNsECw53a7PY+sU1NTmC81wwLBnlMUNT8/nxfW4uLih4eH7+o1kLrtn5+fS0tL/574+Pg4Q70G0lZVEMLz8/OJiYlfs66uribT/CCuVAk8Pz9brdZcg9rc3Fw0Gs3sGWSoqsLhsM1my/VYLy4uRiKRzPVaGnHx9f3JyYlWq811hU0mUzQazeYyICFJMhAISKVSXAv4/X6Xy7W+vo7vJtmbVqtdWFjgw86PlzbAsqzX652cnPy1jpRK5f7+PkmSmav/9OKCEHq93uXlZblcnj3lwMCAxWL5+Pj4sfpPhYTgKYKm6ZubG5/P5/F4zGYzRVECMo1G09PT09TU1NDQUFNTg+/5eX6KiMViwWCQZVn8o1gsVigU/NH6/ykiRygSlEJ/Bv8BMBBkYu/CYzAAAAAASUVORK5CYII="></image>
+    </a>
+</div>
+
+<body>
+
+    <div class="navigation_bar">
+
+        <a href="home.html">
+            <p class="nav_item">Home</p>
+        </a>
+        <a href="software.html">
+            <p class="nav_item">Software</p>
+        </a>
+        <a href="support.html">
+            <p class="nav_item">Support</p>
+        </a>
+        <p class="nav_item"><u>Information</u></p>
+        <a href="donate.html">
+            <p class="nav_item">Donate</p>
+        </a>
+
+    </div>
+
+    <div class="full_stack_field_guide_to_bitcoin">
+        <h1>The Full Stack Field Guide to</h1>
+        <br /><br />
+        <image class="bitcoin" src="bitcoins.png"></image>
+        <br /><br /><br />
+
+        <b>Note:</b><br><br>You should know that with Bitcoin mining, most people choose to use a mining pool for consistent rewards, and it is a less complex process that is covered in this guide with links to the steps required.
+        <br><br>This guide in full will teach you how to set up a full Bitcoin node, a Bitcoin lightning node, an ASIC miner for solo mining, and tell you everything you need to get it done. When you're solo mining Bitcoin, you will be bearing the cost
+        of equipment and electricity detailed in this guide. It is up to you to decide your risk tolerance.
+        <br /><br /> <b>Click <a href="#solo_content_shortcut_target">here</a> if you just want to connect a miner to a hosted mining pool server for your chosen pool's fee rates, or solo mining server for just a 2% reward fee.</b>
+        <br /><br />
+        <br /><br />
+        <b>What you’re deploying today:</b>
+        <br /><br />
+        <blockquote class="indent">
+            1) A full Bitcoin node
+            <br /> 2) An ASIC Bitcoin miner
+            <br /> 3) A lightning network node
+            <br /> 4) A disaster scenario mitigation plan
+        </blockquote>
+        <br /><br />
+        <b>You should be already familiar with or are prepared to Google:</b>
+        <br /><br />
+        <blockquote class="indent">
+            1) How to use a Linux terminal
+            <br /> 2) How to execute a script
+            <br /> 3) How to configure a router
+            <br /> 4) How to install a hard drive
+            <br /> 5) How to configure a BIOS
+        </blockquote>
+        <br /><br />
+        <h3>Table of Contents</h3>
+        <br /><br />
+
+        <!--  -->
+        <!--  -->
+        <!--  -->
+
+        <a href="#hardware-requirements-and-configuration"><b>Hardware Requirements and Configuration</b></a>
+        <br /><br /> 1) Get and Configure a Computer
+        <br /><br />
+        <blockquote class="indent">
+            a. What do I need other than the computer?
+            <br /> b. What’s the recommended hardware specification?
+            <br /> c. Wipe the machine, install, and update Ubuntu
+            <br /> d. Configure power settings
+        </blockquote>
+        <br /><br /> 2) Get and Re-flash an ASIC Miner
+        <br /><br />
+        <blockquote class="indent">
+            a. What do I need other than the ASIC Bitcoin miner?
+            <br /> b. What’s the best place to get an ASIC Bitcoin miner?
+            <br /> c. Where do I get the firmware?
+            <br /> d. How do I re-flash it?
+            <br /> e. How do I confirm that it is working?
+        </blockquote>
+        <br /><br /> 3) Configure Your Router
+        <br /><br />
+        <blockquote class="indent">
+            a. What kind of router should I have?
+            <br /> b. What settings need to be changed?
+        </blockquote>
+        <br /><br />
+        <a href="#software-requirements-and-configuration"><b>Software Requirements and Configuration</b></a>
+        <br /><br /> 1) Install the Prerequisite Packages
+        <br /><br /> 2) Install the Bitcoin Core Client (<a href="http://www.bitcoin.org">bitcoin.org</a>)
+        <br /><br />
+        <blockquote class="indent">
+            a. Installation steps
+            <br /> b. How do I confirm that it is working?
+        </blockquote>
+        <br /><br /> 3) Set Up a Lightning Network Node (<a href="https://github.com/lightningnetwork/lnd">LND</a>)
+        <br /><br />
+        <blockquote class="indent">
+            a. Installation steps
+            <br /> b. How do I confirm that it is working?
+        </blockquote>
+        <br /><br />
+        <a href="#disaster-scenario-preparation"><b>Disaster Scenario Preparation</b></a>
+        <br /><br /> 1) What If the Power Goes Out?
+        <br /><br />
+        <blockquote class="indent">a. UPS battery backups</blockquote>
+        <br /><br /> 2) What If the Internet Goes Down?
+        <br /><br />
+        <blockquote class="indent">
+            a. The likelihood of this
+            <br /> b. Connect to the Bitcoin network via satellite
+        </blockquote>
+        <br /><br /><br />
+
+        <!--  -->
+        <!--  -->
+        <!--  -->
+
+        <a id="hardware-requirements-and-configuration">
+            <h1>Hardware Requirements and Configuration</h1>
+        </a>
+        <br /><br />
+        <h3><i>Get and Configure a Computer</i></h3>
+        <br /><br /> You will need a separate machine to run everything on, I do not suggest deploying all of this on a machine that you use even semi-regularly in order to avoid accidents and configuration conflicts. This “server” we’re setting up should
+        live on its own and be able to be powered on all the time.
+        <br /><br /><br />
+        <b>1) What do I need other than the computer?</b>
+        <br /><br />
+        <blockquote class="indent">
+            a. A 4GB or larger flash drive for creating OS installation media.
+            <br /><br /> b. A second computer (Mac or PC is fine) or the ability to make installation media on the machine you plan to use for this guide.
+            <br /><br /> c. An ethernet cable to directly connect the machine to your router.
+            <br /><br /> d. A cheap screen for setup and monitoring.
+        </blockquote>
+        <br /><br />
+        <b>2) What’s the recommended hardware specification?</b>
+        <br /><br /> You won’t need a very powerful computer and you can use a desktop or laptop machine; form factor does not matter. Each application we’ll be using requires a minimal amount of compute power and memory; together, still negligible. I’ve
+        outlined some basic requirements that should be more than enough to cover our needs for many years to come:
+        <br /><br />
+        <blockquote class="indent">
+            a. Processor: Quad core or better (Brand does not matter).
+            <br /><br /> b. RAM: 6GB.
+            <br /><br /> c. Hard Drive: 1TB or larger SSD or HDD (Bigger is better; Bitcoin’s blockchain will continue to grow forever, but you should be able to get away with 1TB for another handful of years).
+            <br /><br /> d. Networking: An ethernet port.
+        </blockquote>
+        <br /><br />
+        <b>3) Wipe the machine, install, and update Ubuntu</b>
+        <br /><br /> You should be able to do this without issue, otherwise you can google how to do it. You may have to make some changes in your BIOS to be able to boot from USB and if you’re using a machine that came with a recent version of Windows
+        installed, you may need to turn off disk encryption as well.
+        <br /><br /> Once booted to the installation media, you should choose to wipe the entire disk and install Ubuntu. None of the other steps other than selecting your time zone and choosing to login automatically at startup are critical for our purposes.
+        <br /><br /> Once you are rebooted into Ubuntu without the installation media attached to the machine, we need to make sure everything is up to date before we start installing things. Software updater may pop up with some updates ready to install.
+        You can use that or run the following command in a terminal:
+        <br /><br />
+        <code>sudo apt-get update && sudo apt-get upgrade</code>
+        <br /><br /> Once it is finished, reboot the system using the prompt from software updater or the following command:
+        <br /><br />
+        <code>reboot</code>
+        <br /><br /><br />
+        <b>4) Configure power settings</b>
+        <br /><br /> After the machine has finished booting back up, open the settings application and make sure the following criteria are true:
+        <br /><br />
+        <blockquote class="indent">
+            a. Never blank screen.
+            <br /> b. Automatic suspend off.
+            <br /> c. Power button action set to “Nothing”.
+        </blockquote>
+        <br /> The goal is to never let anything interfere with Bitcoin Core or any of the other applications we’re installing.
+        <br /><br /> You don’t have to, but I like to turn off the Bluetooth radio as well because it shouldn’t ever be needed.
+        <br /><br /><br />
+        <h3><i><a id="solo_content_shortcut_target">Get and Re-flash an ASIC Miner</a></i>
+        </h3>
+        <div id="solo_content_body" class="solo_content_shortcut">
+            <br /><br /> If you want to mine Bitcoin, you’re going to need an ASIC (Application Specific Integrated Circuit) device designed specifically for mining. It will cost you ~$500 for one of the devices I'll be using in this guide, and you'll
+            want to make sure it includes a power supply or buy one separately.
+            <br><br> It will also cost you about $50 a month in electricity usage to run it, and you'll want to avoid peak hours electricity rates in most cases unless you really want to make sure you're always hashing to increase your chances. In some
+            cases, you can just pipe the heat into your living space and subsizide your heating bill to help cover this cost. With pool mining, in many cases your electricity cost will be covered and that profit margin can be extended further if you no
+            longer need to run your home HVAC heater.
+            <br><br> There are a few manufacturers for these devices and each one makes a few different models with different hashing rates. You’ll commonly see hash ratings anywhere between 10TH/s to 120TH/s (Tera-hash per second).
+            <br /><br /> For the purposes most of this guide, we’ll be using an Antminer S9 and we’ll be solo mining. However, there will be instructions in the testing steps that can guide you to adding your miner to a hosted pool mining server. Solo
+            mining means you’re attempting to solve a block in the Bitcoin blockchain by yourself instead of contributing your hash power to a collective or “pool” that then splits the reward for one of its contributors mining a block according to the
+            hash power contributed by the miner participants in the pool.
+            <br /><br /><br />
+            <b>1) What’s the best place to get an ASIC Bitcoin miner?</b>
+            <br /><br /> There are a few resellers that you can buy an ASIC Bitcoin miner from, including from listings on Amazon and eBay, but I like to watch for deals that <a href="http://www.twitter.com/kaboomracks">@kaboomracks</a> has. I just got
+            an S9 delivered in fantastic shape for $499.00 from them (Including the power supply). You may also find good deals from other private parties, I suggest asking around Bitcoin Twitter.
+            <br /><br /><br />
+            <b>2) What do I need other than the ASIC Bitcoin miner?</b>
+            <br /><br />
+            <blockquote class="indent">
+                a. An Ethernet cable.
+                <br /><br /> b. An 8GB microSD card and means to read/write from/to it.
+                <br /><br /> c. A power cable. Many refurbished or used miners do not come with one, but you can make one or find adapters that will allow you to use the 220v power outlet installed for clothes dryers in most American homes. These outlets
+                are typically labeled with their type (Ex: NEMA 14-30R, 10-30R, etc.) Most ASICs, including Antminer’s S9, are designed to use 220v power. 110v power is not recommended because it will draw around double the amperage to compensate, which
+                is extremely inefficient and may damage your power supply and/or miner if it doesn’t trip your breaker first.
+                <br /><br /> d. A heat dissipation plan. A popular method is using a vent hose and fan shroud to pipe the heat from the back of the S9 to a clothes dryer exhaust vent or directly into your furnace air intake or living space to help heat
+                your home or workspace. There are shrouds made specifically for the S9 available online.
+                <br /><br /> e. A sound isolation plan. If you have a separate room for laundry or the furnace, you’re going to want to take full advantage of the isolation that provides. ASICs are loud but make no more than ‘white noise’ in effect if
+                they are in an enclosed room. Mounting foam to the back of the door can help decrease noise further, or you can replace the stock fans with these <a href="https://www.google.com/search?q=AC+Infinity+CLOUDLINE+T4%2C+Quiet+4%E2%80%9D+Inline+Duct+Fan&sxsrf=AOaemvIMkW1hrVhnvVHd8o2symGcXlt2SA%3A1642723969964&ei=gfrpYd-pOv7H0PEP0Ka9oA0&ved=0ahUKEwif7sXVx8H1AhX-IzQIHVBTD9QQ4dUDCA4&uact=5&oq=AC+Infinity+CLOUDLINE+T4%2C+Quiet+4%E2%80%9D+Inline+Duct+Fan&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMgYIABAWEB46BwgAEEcQsAM6BwgAELADEEM6CggAEIAEEIcCEBRKBAhBGABKBAhGGABQ-BFYuU9gyFRoB3ACeACAAWmIAdABkgEDMC4ymAEAoAECoAEByAEKwAEB&sclient=gws-wiz">AC Infinity CLOUDLINE T4, Quiet 4” Inline Duct Fans</a>                and some fittings for an ultra quiet setup, like this:
+                <br><br>
+
+                <blockquote class="indent">
+                    <div class="media_container"><i>A picture of the completed miner assemblys & a video showing the sound of the miners compared to the standard HVAC<br> 50% volume on earbuds/headphones in a quiet room is close to accurate, video always changes sound somewhat.</i><br><br>
+                        <img class="media_1" src="https://i.imgur.com/zFoESH7.jpeg"></img>
+                        <iframe class="media_2" src="https://www.youtube.com/embed/PFhBlWmuoeo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <!-- <img class="media_size_1" src="https://i.imgur.com/zFoESH7.jpeg"></img> -->
+                    </div>
+
+                </blockquote>
+                <br><br> In this situation, you'll likely want to <a href="https://www.google.com/search?q=adjust+antminer+s9+hashrate&oq=adjust+antminer+s9+hashrate&aqs=chrome..69i57j33i22i29i30l9.3403j0j9&sourceid=chrome&ie=UTF-8">adjust the miner's hashrate</a>                according to how the fans perform in your environment. I like to keep my S9s chip temperature reading under 100°C, which will be displayed in the miner dashboard.
+                <br><br> In a house, you might choose to put your miners next to your HVAC unit and duct the heat into the unit air intake. HVAC units are typically in basements or isolated closets, granting additional sound deadening to the point of
+                near silence.
+                <br><br> <b>Click <a href="#solo_mining_pool_connection_instructions">here</a> if you have everything listed up to this point and are ready to connect to a hosted mining pool server or solo mining pool server.</b>
+                <br /><br /> a. Firmware can be found on the manufacturer’s website. I recommend starting with flashing the original firmware and upgrading it through the miner’s web interface to the latest version.
+                <a href="https://file12.bitmain.com/shop-product/firmware/t9%2B%20-SD%20Tools.zip">Here is a link to the original
+                    firmware</a> for the Antminer S9.
+            </blockquote>
+        </div>
+
+        <br /><br />
+        <b>5) How do I re-flash it</b>
+        <blockquote class="indent">
+            <br /> a. Format your microSD card as FAT32 and copy the contents of the zip archive you downloaded in the last step to it.
+            <br /><br /> b. While unplugged, set the jumper on the control board of the miner is to flash mode.
+            <a href="https://support.bitmain.com/hc/en-us/articles/360019493654-S9-series-S9-S9i-S9j-S9-Hydro-Control-Board-Program-Recovery">Here
+            is a guide from Antminer</a>, for reference. <br /><br /> c. insert the microSD card into your S9’s control board, connect the power supply to it, and power it on. You do not have to have the hashing boards plugged in. Wait 90
+            seconds and then turn off and disconnect the power supply.
+            <br /><br /> d. Set the jumper on the control board back to operation mode, connect the miner to your network with an ethernet cable, and plug in and power on the miner. Access the control dashboard by typing in the miner’s IP address into
+            your web browser. You can get the IP address for your miner easily by checking the connected devices on your router. Be patient, it may not show up right away. The credentails should be "root" and "admin" for user and password, respectively.
+            Check the manufacturer's documentation for the default credentials if this does not work, your milage may vary.
+            <br /><br /> e. Upgrade the firmware on the S9 to the latest version via the miner’s web interface, using the
+            <a href="https://service.bitmain.com/support/download?product=Antminer%20S9">firmware upgrade file from the
+            manufacturer’s website</a>.
+        </blockquote>
+        <br /><br />
+        <b><a id="solo_mining_pool_connection_instructions">6) How do I confirm that it is working?</a></b>
+        <br /><br /> We’re going to point the miner at a solo mining pool known as
+        <a href="https://solo.ckpool.org/">ckpool</a>. Visit the miner configuration tab of your S9's web interface by visiting the local IP address of the miner in a browser. You can get the IP address from your router's DHCP server client list, likely
+        in the advanced settings or under "LAN" in the <a href="https://www.lifewire.com/accessing-your-router-at-home-818205#:~:text=Do%20this%20by%20typing%20the,and%20access%20the%20admin%20settings.">web portal</a>, enter the details as follows for
+        the pool information, not including the “(” and “)” characters. The remaining slots on the dashboard can be left blank: <br /><br /> Address: <code>solo.ckpool.org:3333</code>
+        <br /> User: (A Bitcoin Receiving Address. You can generate one from any Bitcoin wallet where you are the sole custodian of the private key.)
+        <br /> Password: (Literally anything you want, just not blank)
+        <br /><br /> After a few minutes, your miner will sound like it is ramping down. This means the initial checks are complete and it is about to start hashing. Continually refresh the miner status page to see new information about what the miner
+        is doing. It may take a few minutes for information to appear.
+        <br /><br /> If your goal was simply to get set up for solo mining and you don’t mind that ckpool will take 2% of the reward if you find a block, then you can stop here. You are officially solo mining. However, if you don’t want to have to trust
+        ckpool or if you want to set up your own mining pool in general so you don’t have to profit share, continue with this guide.
+        <br><br><b>You can also configure your miner to use a hosted pool mining server by following the same steps, with your selected pool address from <a href="https://help.slushpool.com/en/support/solutions/articles/77000422800-bitcoin-mining-setup-on-slush-pool-%E2%98%85">this guide</a>        and a worker name instead of a receiving address. You'll need to complete a few additional steps they've outlined on that page.</b>
+        <br /><br /><br />
+        <h3><i>Configure Your Router</i></h3>
+        <br /><br />
+        <b>1) What kind of router should I have?</b>
+        <br /><br /> You should have a router that is a separate device from the modem your internet provider supplied to you. If you have a modem/router combo device from your internet provider, you can purchase a separate router and bypass the router
+        inside the combo device, treating it specifically as a modem. Anything manufactured within the last 10 years should do just fine.
+        <br /><br /><br />
+        <b>2) What settings need to be changed?</b>
+        <br /><br />
+        <blockquote class="indent">
+            a. Ports
+            <br /><br />
+            <div class="indent">
+                You will need to set up port forwarding for the following ports: 8332, 8333, 9735
+            </div>
+            <br />
+            <div class="indent">
+                Please consult your router manual or the internet on how to do this if you are not sure.
+            </div>
+            <br /><br /> b. Addressing
+            <br /><br />
+            <div class="indent">
+                You will need to assign static IP addresses for both the computer you’re intending to set everything up on and for the ASIC device.
+            </div>
+            <br /><br /> c. Security
+            <br /><br />
+            <div class="indent">
+                Your router interface and Wi-Fi network should be secured with a reasonably difficult to guess password using at least the WPA2 security protocol.
+            </div>
+            <br /><br /> d. Power
+            <br /><br />
+            <div class="indent">
+                Your router should NOT be set to reboot on any interval. You want to ensure that your computer will remain connected consistently.
+            </div>
+        </blockquote>
+
+        <!--  -->
+        <!--  -->
+        <!--  -->
+
+        <br /><br /><br />
+        <a id="software-requirements-and-configuration">
+            <h1>Software Requirements and Configuration</h1>
+        </a>
+        <br /><br />
+        <h3><i>Install the Prerequisite Packages</i></h3>
+        <br /><br /> 1) On the computer you’re intending to set everything up on, you’ll need to install a few packages that are required by all the applications we’re about to install. You can do this all in one go by running the following command in
+        the terminal:
+        <br /><br />
+        <code>sudo add-apt-repository ppa:longsleep/golang-backports && sudo apt
+            update && sudo apt install git build-essential libtool autotools-dev
+            automake pkg-config libssl-dev libevent-dev bsdmainutils
+            libboost-system-dev libboost-filesystem-dev libboost-chrono-dev
+            libboost-program-options-dev libboost-test-dev libboost-thread-dev
+            libminiupnpc-dev libdb5.3++ libdb5.3++-dev libzmq3-dev qt5-default
+            qttools5-dev-tools golang-go</code>
+        <br><br>Many prompts will appear, to which you'll basically just need to say yes.
+        <br /><br /> 2) You’ll also need to set some networking defaults in Ubuntu. Run this command in the terminal:
+        <br /><br />
+        <code>sudo ufw allow ssh && sudo ufw allow 8332 && sudo ufw allow 8333 &&
+            sudo ufw allow 9735 &&
+            sudo ufw default allow incoming && sudo ufw default allow outgoing &&
+            sudo ufw enable && sudo iptables -A INPUT -p tcp --dport 9735 -j ACCEPT
+            && sudo iptables -A INPUT -p udp --dport 9735 -j ACCEPT && sudo
+            iptables-save</code>
+        <br /><br /> 3) Then, we’ll need to install Redis:
+        <br /><br />
+        <code>sudo snap install
+            redis</code>
+        <br /><br /><br />
+        <h3><i>Install the Bitcoin Core Client (<a href="http://www.bitcoin.org">bitcoin.org</a>)</i></h3>
+        <br /><br />
+        <b>a. Installation steps</b>
+        <br /><br /> We are going to build Bitcoin Core from scratch so that we can include a few extras that are required to run an LND lightning node.
+        <br /><br />
+        <blockquote class="indent">
+            1) Open a terminal and run the following command with the version (v22.0) of your choice from Bitcoin's <a href="https://github.com/bitcoin/bitcoin/releases">git repository releases page</a>:
+            <br /><br />
+            <code>sudo git clone -b v22.0 https://github.com/bitcoin/bitcoin.git &&
+            cd bitcoin && sudo ./autogen.sh && sudo ./configure --enable-cxx --with-zmq
+            --with-incompatible-bdb --with-gui --enable-util-cli --enable-util-tx
+            --enable-util-wallet && sudo make -j "$(($(nproc)+1))" && sudo make
+            install</code>
+            <br /><br /> 2) Once completed, launch the Bitcoin Core client GUI using the following command:
+            <br /><br />
+            <code>bitcoin-qt</code>
+            <br /><br /> 3) Once loaded, choose to use the default data directory and DO NOT select the option to discard blocks after verification. Continue and after the main client window loads, hide the block synchronization progress message and click
+            “Create a new wallet”.
+            <br /><br /> 4) Give the wallet a name and check “Encrypt Wallet”. Click “Create” and provide a password for the wallet.
+            <br /><br /> 5) Click “OK” and “Yes” to the warning you about the password. Write the password down and do not ever lose it; this password along with the ~/.bitcoin data directory are CRITICAL to have a backup of just in case your hard drive
+            fails, as it is the only way you will recover any bitcoin sent to this wallet in that scenario.
+            <br /><br /> 6) Open the “Settings” menu, choose “Options…”
+            <br /><br /> 7) Make sure that “Start Bitcoin Core on system login” is checked.
+            <br /><br /> 8) Click “Open Configuration File” and paste the following into it, then define the rpcuser and rpcpassword parameters as whatever you like. These will be used later for mining pool configuration. Set the blank rpcallowip parameter
+            to the local IP address of your ASIC miner.
+            <br /><br />
+            <code>
+            server=1
+            <br>daemon=1
+            <br>listen=1
+            <br>rpcuser=
+            <br>rpcpassword=
+            <br>rpcallowip=
+            <br>rpcallowip=127.0.0.1
+            <br>rpcport=8332
+            <br>rpcworkqueue=32
+            <br>zmqpubrawblock=tcp://127.0.0.1:18501
+            <br>zmqpubrawtx=tcp://127.0.0.1:18502
+            </code>
+            <br /><br /><br />
+        </blockquote>
+        <b>b. How do I confirm that it is working?</b>
+        <br /><br />
+        <blockquote class="indent">
+            1) Reboot the machine to ensure that Bitcoin Core starts back up on its own. Then, test that everything is working so far by running the following command in a terminal:
+            <br /><br />
+            <code>bitcoin-cli getbestblockhash</code>
+            <br /><br /> 2) If you don’t get any errors in return, you are in good shape. In the Bitcoin Core GUI, you should see that blocks are synchronizing. This may take many hours. At the time of writing this guide (10/11/2021), Bitcoin’s blockchain
+            is over 420GB in size.
+            <br /><br /> 3) Double check that the port for the Bitcoin Core client is properly configured by visiting
+            <a href="https://bitnodes.io/">the Bitnodes website</a> and checking the status of your node.
+        </blockquote>
+        <br /><br />
+        <h3><i>Set Up a Lightning Network Node (<a href="https://github.com/lightningnetwork/lnd">LND</a>)</i></h3>
+        <br><br>Learn about the Lightning Network here: <a href="https://lightning.network/">https://lightning.network/</a>, or here for a more advanced look: <a href="https://dev.lightning.community/overview/">https://dev.lightning.community/overview/</a>
+        <br><br>There are also managed solutions like <a href="https://voltage.cloud/">Voltage</a> for nodes if you would like a less manual approach to quickly get set up to accept Bitcoin via lightning at your business. After setting up your Voltage
+        account, you can connect an app like <a href="https://zaphq.io/download">Zap</a> on your phone to accept payments for goods and services.
+        <br><br>If you don't have a business and would like a less manual approach overall, check out <a href="https://getumbrel.com/">Umbrel</a>.
+        <br><br>If you don't care to self-host a lightning node at all, you can use any wallet phone app that supports the lightning network like Blockstream Green, Muun, and more.
+        <br /><br />
+        <b>a. Installation Steps</b>
+        <br /><br />
+        <blockquote class="indent">
+            1) Export the path for the go package that was installed earlier in this guide. Run this in a new terminal window:
+            <br /><br />
+            <code>echo "export PATH=$PATH:~/go/bin:/usr/local/go/bin" >>
+            ~/.bashrc</code>
+            <br /><br /> 2) Clone the LND repository:
+            <br /><br />
+            <code>git clone https://github.com/lightningnetwork/lnd.git</code>
+            <br /><br /> 3) Run the following command:
+            <br /><br />
+            <code>cd lnd && git checkout v0.14.1-beta && make && make install
+            tags="autopilotrpc chainrpc invoicesrpc routerrpc signrpc walletrpc
+            watchtowerrpc wtclientrpc"</code>
+            <br /><br /> 4) Create the LND config directory, copy and modify the sample configuration file:
+            <br /><br />
+            <code>mkdir ~/.lnd/ && cp ~/lnd/sample-lnd.conf ~/.lnd/lnd.conf && nano
+            ~/.lnd/lnd.conf</code>
+            <br><br>Comment out the line that says "bitcoin.node=btcd" and uncomment the line that says "; bitcoin.node=bitcoind", they are next to eachother.
+            <br><br> Then, under the "[Bitcoin]" heading, comment out the line that says "bitcoin.simnet=true" and uncomment the line that says "; bitcoin.mainnet=true".
+            <br /><br /> 5) Save and close the file, then reboot the machine.
+        </blockquote>
+        <br /><br />
+        <b>b. How do I confirm that it is working?</b>
+        <br /><br />
+        <blockquote class="indent">
+            1) Run the following in the terminal:
+            <br /><br />
+            <code>lnd</code>
+            <br /><br /> You should see several lines of output, ending in one from [INF] LTND stating that it is waiting for a wallet password. You can now use lncli from any other terminal.
+
+            <br><br>2) You may now choose to generate a lightning wallet, fund it with a Bitcoin transaction, and allocate some of it to operate a channel between another lightning node. You are rewarded with routing fees when your channel is utilized
+            and your funds are safe in escrow.
+
+            <br><br><a href="https://github.com/lightninglabs/lightning-terminal">Lightning Terminal</a> is a nice tool for node management. If you set up your lightning node by following this guide, you already have the required tags present for LND
+            when we compiled it. You can skip right to the <a href="https://docs.lightning.engineering/lightning-network-tools/lightning-terminal/get-lit#docs-internal-guid-ae172929-7fff-f9d0-7921-e6f8acc92f53">"Install litd" section of this page</a>.
+
+            <br><br>You should also create an account at <a href="https://1ml.com/">1ml.com</a> and register your node so you can see the publicly accessible information about the nodes and channels you're connected to.
+        </blockquote>
+        <br /><br /><br />
+
+        <!--  -->
+        <!--  -->
+        <!--  -->
+
+        <a id="disaster-scenario-preparation">
+            <h1>Disaster Scenario Preparation</h1>
+        </a>
+        <br /><br />
+        <b>What If the Power Goes Out?</b>
+        <br /><br /> 1) UPS battery backups
+        <br /><br />
+        <blockquote class="indent">
+            a. In many power outage situations, your internet connection is likely still active if the local DNS hardware is still online. Connecting your router, modem, and computer to a UPS battery backup solution will keep your full stack Bitcoin implementation
+            online and functioning.
+        </blockquote>
+        <br /><br /> If you want to take this a step further, you can explore solar or other natural / renewable energy options.
+        <br /><br /><br />
+        <b>What If the Internet Goes Down?</b>
+        <br /><br /> 1) The likelihood of this
+        <br /><br />
+        <blockquote class="indent">
+            a. If the terrestrial internet were to “go down” ... all banking services, websites, shipping logistics systems, social media platforms, etc. would not be available. We would have bigger fish to fry than worrying about whether you can use your Bitcoin,
+            but the good news is that we don’t have to worry at all.
+            <br /><br /> b. If your internet connection does not rely on terrestrial infrastructure for connecting other than the hardware in your home (I.e.
+            <a href="https://www.starlink.com/">Starlink</a>), and you have a battery backup or solar solution, you basically cannot be stopped. It would take an act of God for you to not be able to access and use, or mine Bitcoin.
+            <br /><br /> c. Connect to the Bitcoin network via direct connection to a Bitcoin node satellite in orbit. This is plan B, the backup to the already very resilient non-terrestrial internet connection. I’m not going to cover how to connect
+            to them in this guide, but you should know that the option is available to you. Check out the <a href="https://help.blockstream.com/hc/en-us/categories/900000061466-Blockstream-Satellite">Blockstream
+            Satellite guides</a> for more information.
+            <br /><br /> d. With the direct satellite connection set up, you would be able to operate your full node and mine Bitcoin even if the entire internet were to disappear. That is even less likely than the terrestrial internet going down, but
+            it is nice to know just how robust the Bitcoin network is.
+        </blockquote>
+        <br /><br />
+    </div>
+</body>
+
+</html>

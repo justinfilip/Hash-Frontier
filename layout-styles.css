@@ -1,0 +1,241 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html body {
+    background-color: #ffffff;
+    width: 100%;
+    height: 100%;
+    font-family: sans-serif;
+    font-weight: 350;
+}
+
+code {
+    background: hsl(220, 100%, 94%);
+}
+
+pre {
+    background: hsl(220, 100%, 94%);
+}
+
+a {
+    color: #f2a900;
+}
+
+h1 {
+    margin-top: 10px;
+}
+
+h3 {
+    margin-top: 20px;
+}
+
+p {
+    margin-top: 20px;
+}
+
+
+/*  */
+
+
+/* STYLING */
+
+
+/* HOME PAGE */
+
+.navigation_bar {
+    padding-top: 100px;
+    padding-left: 25px;
+}
+
+.nav_item {
+    display: inline-block;
+    margin-right: 25px;
+    color: #000000;
+}
+
+.donate {
+    float: right;
+    margin-right: 25px;
+    color: #000000;
+}
+
+.main_window {
+    padding: 25px;
+    margin-top: 25px;
+}
+
+.image_container {
+    width: 100%;
+    display: inline-block;
+    padding: 25px;
+}
+
+.image_resource {
+    display: inline-block;
+    max-width: 100%;
+    margin-top: 25px;
+    border: 1px solid #f5f5f5;
+}
+
+
+/* GENERAL STYLIZE */
+
+.indent {
+    padding-left: 20px;
+}
+
+
+/*  */
+
+
+/* OBJECTS W/ AUTOMATIONS */
+
+.media_container {
+    max-width: 90%;
+    height: auto;
+}
+
+.media_1 {
+    vertical-align: top;
+    max-width: 100%;
+}
+
+.media_2 {
+    vertical-align: top;
+    height: 500px;
+    width: 100%;
+}
+
+.hf_logo_start {
+    position: absolute;
+    top: 50px;
+    left: 100px;
+    padding: 10px;
+    width: 500px;
+    max-width: 70%;
+    opacity: 0%;
+}
+
+.hf_logo_finish {
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    padding: 10px;
+    width: 500px;
+    max-width: 70%;
+    opacity: 100%;
+}
+
+.hf_logo_loaded {
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    padding: 10px;
+    width: 500px;
+    max-width: 70%;
+    opacity: 100%;
+    transition: 0.5s;
+}
+
+.first_text_body_start {
+    position: absolute;
+    top: 50px;
+    left: 100px;
+    padding: 10px;
+    width: 500px;
+    max-width: 90%;
+    opacity: 0%;
+}
+
+.remaining_text_body_finish {
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    padding: 10px;
+    width: 500px;
+    max-width: 90%;
+    opacity: 100%;
+    transition: 0.5s;
+}
+
+
+/*  */
+
+
+/* OBJECTS W/O AUTOMATIONS */
+
+.support_email_cap {
+    width: 250px;
+    height: 30px;
+    padding: 7px;
+    margin-top: 20px;
+    display: inline-block;
+    max-width: 95%;
+}
+
+.support_email_cap:focus {
+    outline: 0;
+    width: 250px;
+    height: 30px;
+    padding: 7px;
+    display: inline-block;
+    margin-top: 20px;
+    max-width: 95%;
+}
+
+.support_email_cap_submit {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    background-color: #000000;
+    color:rgb(255, 255, 255);
+    border-radius: 5px 5px 5px 5px;
+    font-size: smaller;
+    padding: 7px;
+    margin-top: 15px;
+}
+
+.mission {
+    margin-bottom: 40px;
+}
+
+.full_stack_field_guide_to_bitcoin {
+    padding: 25px;
+    margin-top: 24px;
+    max-width: 1600px;
+}
+
+.code_block {
+    border-radius: 10px;
+    height: 120px;
+    max-width: 1200px;
+    border: 1px solid rgb(245, 245, 245);
+    font: 12px/26px Georgia, Garamond, Serif;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.bitcoin {
+    max-width: 85%;
+}
+
+.btc_code {
+    width: 310px;
+    max-width: 95%;
+}
+
+.btc_address {
+    overflow-wrap: break-word;
+    max-width: 95%;
+    margin-bottom: 15px;
+}
+
+.twitter {
+    float: right;
+    width: 30px;
+    margin-right: 30px;
+    margin-top: 55px;
+}
